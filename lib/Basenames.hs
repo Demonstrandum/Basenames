@@ -58,8 +58,8 @@ factorPostfix 13 = "ker's dozenal"
 factorPostfix 10 = "gesimal"
 factorPostfix n = baseName n
 
--- Factorise a number into two factors, from two closest together to two furthest appart.
--- Smallest factor first.  This is the preferred way of spliting factors.
+-- Factorise a number into two factors, from two closest together to two furthest apart.
+-- Smallest factor first.  This is the preferred way of splitting factors.
 -- Such factors radiate from the square root of the number.
 siblingFactors :: forall i. Integral i => i -> [(i, i)]
 siblingFactors k = (findFactor . floor . sqrt . fromIntegral) k []
@@ -94,6 +94,6 @@ joinWords a b | (last a ==) `any` ['a', 'o'] && isVowel (head b) = init a ++ b
               | otherwise = a ++ b
   where isVowel c = (c ==) `any` ['a', 'e', 'i', 'o', 'u', 'y']
 
--- An infinte list of base names, whose indices corresponds to the base.
+-- An infinite list of base names, whose indices correspond to the base.
 bases :: [String]
 bases = map baseName [0 :: Int ..]
